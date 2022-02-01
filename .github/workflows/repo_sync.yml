@@ -1,15 +1,21 @@
-# File: .github/workflows/repo-sync.yml
-name: sync-JD-scripts1
+
 on:
+  push:
+    branches:
+      -master
   schedule:
-    - cron: '27 0,10 * * *'
+    - cron: 0 */12 * * *
+    # 每隔12小时
 jobs:
-  repo-sync:
+  update_external_airflow_fork:
     runs-on: ubuntu-latest
     steps:
-      - name: sync JD-scripts1
-        uses: repo-sync/github-sync@v3
+      - uses: TobKed/github-forks-sync-action@master
         with:
-          source_repo: "https://github.com/hyzaw/AllJDScripts.git"
-          source_branch: "master"
-          destination_branch: "master_AllJDScripts"
+          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }} # 令牌
+          upstream_repository: hyzaw/AllJDScripts  # 上游仓库
+          target_repository: ilaotan/x2  # 你要推送的仓库
+          upstream_branch: master  # 默认是拉取上游仓库的master分支
+          target_branch: master_AllJDScripts  # 默认推送到你的仓库master分支
+          force: true  # 是否强制推送
+          tags: true  # 确定是否使用-tags
