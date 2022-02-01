@@ -1,5 +1,7 @@
-
+name: sync-JD-scripts1
 on:
+  watch:
+    types: started
   push:
     branches:
       -master
