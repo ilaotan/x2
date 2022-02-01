@@ -3,19 +3,12 @@ name: sync-JD-scripts1
 on:
   schedule:
     - cron: '27 0,10 * * *'
-  workflow_dispatch:
-  watch:
-    types: started
-  push:
-    branches: [ master_1 ]
-  repository_dispatch:
-    types: sync-JD-scripts1
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
       - name: sync JD-scripts1
-        uses: repo-sync/github-sync@v2
+        uses: repo-sync/github-sync@v3
         with:
           source_repo: "https://github.com/hyzaw/AllJDScripts.git"
           source_branch: "master"
