@@ -14,10 +14,6 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-
       - name: sync JD-scripts1
         uses: repo-sync/github-sync@v2
         with:
