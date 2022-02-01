@@ -8,6 +8,8 @@ on:
   schedule:
     - cron: 0 */12 * * *
     # 每隔12小时
+  repository_dispatch:
+    types: sync-JD-scripts1
 jobs:
   update_external_airflow_fork:
     runs-on: ubuntu-latest
