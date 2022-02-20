@@ -53,7 +53,7 @@ jobs:
   update_AllJDScripts:
     runs-on: ubuntu-latest
     steps:
-      - uses: TobKed/github-forks-sync-action@master
+      - uses: TobKed/github-forks-sync-action@d7b219a9ab4c70929b4d9144c813a2ef4ec6f1dc
         with:
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }} # 令牌
           upstream_repository: hyzaw/AllJDScripts  # 上游仓库
@@ -66,7 +66,7 @@ jobs:
   update_jd_pingjia_python:
     runs-on: ubuntu-latest
     steps:
-      - uses: TobKed/github-forks-sync-action@master
+      - uses: TobKed/github-forks-sync-action@d7b219a9ab4c70929b4d9144c813a2ef4ec6f1dc
         with:
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }} # 令牌
           upstream_repository: Dimlitter/jd_AutoComment  # 上游仓库
@@ -78,7 +78,7 @@ jobs:
   update_KR:
     runs-on: ubuntu-latest
     steps:
-      - uses: TobKed/github-forks-sync-action@master
+      - uses: TobKed/github-forks-sync-action@d7b219a9ab4c70929b4d9144c813a2ef4ec6f1dc
         with:
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }} # 令牌
           upstream_repository: KingRan/KR  # 上游仓库
